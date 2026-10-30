@@ -19,3 +19,7 @@ class ParseError(Exception):
         self.col = col
         self.message = message
         super().__init__(f"line {line}, column {col}: {message}")
+
+
+class ExecutionError(Exception):
+    """Error producido durante la ejecución de un programa."""
