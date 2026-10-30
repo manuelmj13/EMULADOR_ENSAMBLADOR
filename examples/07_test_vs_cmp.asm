@@ -1,3 +1,4 @@
+; test aplica AND solo para actualizar flags; no escribe eax.
 mov eax, 0b1010
 test eax, 0b0010
 jnz bit_encendido

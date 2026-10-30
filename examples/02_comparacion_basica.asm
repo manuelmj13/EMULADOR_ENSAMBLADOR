@@ -1,3 +1,4 @@
+; cmp actualiza ZF; je salta cuando ambos valores son iguales.
 mov eax, 10
 cmp eax, 10
 je iguales
