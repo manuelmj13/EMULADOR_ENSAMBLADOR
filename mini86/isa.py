@@ -1,0 +1,75 @@
+"""Tablas estáticas del subconjunto educativo de x86 IA-32."""
+
+REGISTROS_VALIDOS = frozenset(
+    {"eax", "ebx", "ecx", "edx", "esi", "edi", "esp", "ebp"}
+)
+
+FLAGS_ARITMETICA = frozenset({"CF", "ZF", "SF", "OF", "PF"})
+FLAGS_LOGICA = frozenset({"ZF", "SF", "PF"})
+
+FLAGS_POR_INSTRUCCION = {
+    "add": FLAGS_ARITMETICA,
+    "sub": FLAGS_ARITMETICA,
+    "inc": FLAGS_LOGICA | {"OF"},
+    "dec": FLAGS_LOGICA | {"OF"},
+    "cmp": FLAGS_ARITMETICA,
+    "test": FLAGS_LOGICA,
+    "mov": frozenset(),
+    "jmp": frozenset(),
+    "hlt": frozenset(),
+    "je": frozenset(),
+    "jz": frozenset(),
+    "jne": frozenset(),
+    "jnz": frozenset(),
+    "jg": frozenset(),
+    "jnle": frozenset(),
+    "jge": frozenset(),
+    "jnl": frozenset(),
+    "jl": frozenset(),
+    "jnge": frozenset(),
+    "jle": frozenset(),
+    "jng": frozenset(),
+    "ja": frozenset(),
+    "jnbe": frozenset(),
+    "jae": frozenset(),
+    "jnb": frozenset(),
+    "jnc": frozenset(),
+    "jb": frozenset(),
+    "jnae": frozenset(),
+    "jc": frozenset(),
+    "jbe": frozenset(),
+    "jna": frozenset(),
+    "js": frozenset(),
+    "jns": frozenset(),
+    "jo": frozenset(),
+    "jno": frozenset(),
+}
+
+JCC_ALIASES = {
+    "je": "je",
+    "jz": "je",
+    "jne": "jne",
+    "jnz": "jne",
+    "jg": "jg",
+    "jnle": "jg",
+    "jge": "jge",
+    "jnl": "jge",
+    "jl": "jl",
+    "jnge": "jl",
+    "jle": "jle",
+    "jng": "jle",
+    "ja": "ja",
+    "jnbe": "ja",
+    "jae": "jae",
+    "jnb": "jae",
+    "jnc": "jae",
+    "jb": "jb",
+    "jnae": "jb",
+    "jc": "jb",
+    "jbe": "jbe",
+    "jna": "jbe",
+    "js": "js",
+    "jns": "jns",
+    "jo": "jo",
+    "jno": "jno",
+}
