@@ -10,9 +10,14 @@ requires-python = ">=3.11"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+gui = ["PyQt6>=6.6"]
 
 [project.scripts]
 mini86 = "mini86.cli:main"
+mini86-gui = "ui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["mini86*", "ui*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
